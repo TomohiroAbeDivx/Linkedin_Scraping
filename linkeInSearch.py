@@ -8,17 +8,9 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
-# login情報保持
-# options = webdriver.ChromeOptions()
-# profile_path = r"/Users/divx/Library/Application Support/Google/Chrome/ProfileTest"
-# options.add_argument(f"user-data-dir={profile_path}")
 
 browser = webdriver.Chrome()
-# html_text = requests.get(login_url).text
-# soup = BeautifulSoup(html_text, 'html.parser')
 
-# login処理
-# if 
 login_url = config['login_url']
 browser.get(login_url)
 elem_username = browser.find_element(By.XPATH, '//*[@id="username"]')
@@ -30,24 +22,26 @@ elem_login_btn = browser.find_element(By.XPATH, '//*[@id="organic-div"]/form/div
 if elem_login_btn:
     elem_login_btn.click()
 
-#  検索処理
 
 # メモ起動処理
-print('検索する名称')
+print('検索する担当者名、会社名(スペースを空けてください。)')
 
-contact_name = input('>> ')
+customer_name, company_name= input('>> ').split()
 memo_url = config['memo_url']
 browser.execute_script("window.open('');")
 browser.switch_to.window(browser.window_handles[-1])
 browser.get(memo_url)
 text_area = browser.find_element(By.XPATH, '//*[@id="main"]')
-text_area.send_keys(config['memo_temp'].replace('XXXX',contact_name))
+
+message = config['memo_temp'].replace('CUSTOMER_NAME',customer_name)
+message = message.replace('COMPANY_NAME', company_name)
+text_area.send_keys(message)
 
 # 検索処理
 browser.execute_script("window.open('');")
 browser.switch_to.window(browser.window_handles[-1])
 search_url = config['search_url']
-browser.get(search_url + contact_name)
+browser.get(search_url + customer_name)
 
 sleep(30)
 
