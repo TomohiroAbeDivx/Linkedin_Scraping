@@ -1,0 +1,16 @@
+# Please copy this template and save as "config.yml"
+login_url: 'https://www.linkedin.com/login/ja'
+login_email: 'Some available email'
+login_password: 'Password of linkedin'
+
+memo_url: 'http://mymemo.top/'
+
+memo_temp: 'XXXX様
+
+突然のご連絡失礼いたします。 株式会社divx EP事業ソリューション担当の安部友弘と申します。
+
+ DIVXは企業様のシステム開発・Web制作・UI/UXデザイン・動画制作の支援をしております。 
+プロフィールを拝見させていただき、弊社がダブル技研様にお役立ちできる領域があると思い、申請させていただきました。 
+もしよろしければ承認いただけますと幸いです。 
+
+お忙しいところ恐縮ですが、何卒よろしくお願いいたします。'
