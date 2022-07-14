@@ -16,8 +16,10 @@ memo_url = config['memo_url']
 # soup = BeautifulSoup(html_text, 'html.parser')
 
 # メモ起動処理
+memo_url = config['memo_url']
 browser.get(memo_url)
 
 text_area = browser.find_element(By.XPATH, '//*[@id="main"]')
 
 text_area.send_keys(config['memo_temp'])
+browser.execute_script("window.open('https://www.linkedin.com/search/results/all/?keywords=%E6%AD%A6%E7%94%B0&sid=_9K');")
