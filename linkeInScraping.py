@@ -8,9 +8,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from time import sleep
 
-# import beautiful soup
-from bs4 import BeautifulSoup
-import requests
 
 browser = webdriver.Chrome()
 login_url = config['login_url']
@@ -27,4 +24,3 @@ elem_password.send_keys(config['login_password'])
 sleep(1)
 elem_login_btn = browser.find_element(By.XPATH, '//*[@id="organic-div"]/form/div[3]/button')
 elem_login_btn.click()
-sleep(10)

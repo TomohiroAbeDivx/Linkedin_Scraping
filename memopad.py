@@ -21,6 +21,3 @@ browser.get(memo_url)
 text_area = browser.find_element(By.XPATH, '//*[@id="main"]')
 
 text_area.send_keys(config['memo_temp'])
-
-sleep(1)
-sleep(3)
