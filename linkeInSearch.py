@@ -19,9 +19,8 @@ elem_username.send_keys(config['login_email'])
 elem_password.send_keys(config['login_password'])
 sleep(1)
 elem_login_btn = browser.find_element(By.XPATH, '//*[@id="organic-div"]/form/div[3]/button')
-if elem_login_btn:
-    elem_login_btn.click()
 
+elem_login_btn.click()
 
 # メモ起動処理
 print('検索する担当者名、会社名(スペースを空けてください。)')
